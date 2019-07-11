@@ -1,2 +1,6 @@
 require './app'
-run Sinatra::Application
+
+run Rack::URLMap.new({
+  "/" => Public,
+  "/auth" => Protected
+})
